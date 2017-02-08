@@ -13,9 +13,8 @@ if (isset($_SERVER['REQUEST_URI'])) {
         return false;
     }
 }
-
 //Quick hasck so that the REST library doesn't remove the last part of the API
-$_SERVER['REQUEST_URI'] .= '.json';
+$_SERVER['REQUEST_URI'] = preg_replace('/\.(\w+)($|\?)/i', '.$1.json$2', $_SERVER['REQUEST_URI']);
 
 
 //init controller
