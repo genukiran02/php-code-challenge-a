@@ -7,5 +7,14 @@
       "email": "korrigan33@gmail.com"
     }
   ],
-  "require": {}
+  "require": {
+    "marcj/php-rest-service": "0.1.*",
+    "guzzlehttp/guzzle": "~6.0",
+    "willdurand/geocoder": "3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Korri\\": "src/"
+    }
+  }
 }
