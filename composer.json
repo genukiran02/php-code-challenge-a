@@ -1,0 +1,11 @@
+{
+  "name": "korri/php-code-challenge-a",
+  "description": "My version of the code challenge",
+  "authors": [
+    {
+      "name": "Hugo Vacher",
+      "email": "korrigan33@gmail.com"
+    }
+  ],
+  "require": {}
+}
