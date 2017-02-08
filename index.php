@@ -3,9 +3,15 @@
 require('vendor/autoload.php');
 
 //We will show the Swagger UI on / for now
-if (isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] == '/') {
-    readfile(__DIR__ . '/static/swagger-ui/index.html');
-    exit;
+if (isset($_SERVER['REQUEST_URI'])) {
+    if($_SERVER['REQUEST_URI'] == '/') {
+        readfile(__DIR__ . '/static/swagger-ui/index.html');
+        exit;
+    }
+    if(substr($_SERVER['REQUEST_URI'], 0, 8) == '/static/' || $_SERVER['REQUEST_URI'] == '/swagger.json') {
+        //Serve static files
+        return false;
+    }
 }
 
 //Quick hasck so that the REST library doesn't remove the last part of the API
