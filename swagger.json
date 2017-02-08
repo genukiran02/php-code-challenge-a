@@ -1,0 +1,22 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.1.0",
+    "title": "php-code-challenge by Korri",
+    "description": "This is my take on the 2h challenge"
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+
+  },
+  "definitions": {
+
+  }
+}
