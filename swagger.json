@@ -14,9 +14,89 @@
     "application/json"
   ],
   "paths": {
-
+    "/geolocation": {
+      "get": {
+        "operationId": "getGeolocation",
+        "description": "Get geolocation for client IP",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/Geolocation"
+            }
+          },
+          "500": {
+            "description": "An error occured",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/geolocation/{ip}": {
+      "get": {
+        "operationId": "getGeolocationByIp",
+        "description": "Get geolocation for an IP",
+        "parameters": [
+          {
+            "name": "ip",
+            "in": "path",
+            "type": "string",
+            "description": "The IP address",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/Geolocation"
+            }
+          },
+          "500": {
+            "description": "An error occured",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
   },
   "definitions": {
-
+    "Geolocation": {
+      "type": "object",
+      "properties": {
+        "ip": {
+          "type": "string"
+        },
+        "geo": {
+          "type": "object",
+          "properties": {
+            "service": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "region": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    }
   }
 }
