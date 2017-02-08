@@ -18,6 +18,16 @@
       "get": {
         "operationId": "getGeolocation",
         "description": "Get geolocation for client IP",
+        "parameters": [
+          {
+            "name": "service",
+            "in": "query",
+            "type": "string",
+            "enum": [ "ip-api", "freegeoip"],
+            "description": "Geolocalization service to use",
+            "required": false
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful response",
@@ -45,6 +55,14 @@
             "type": "string",
             "description": "The IP address",
             "required": true
+          },
+          {
+            "name": "service",
+            "in": "query",
+            "type": "string",
+            "enum": [ "ip-api", "freegeoip"],
+            "description": "Geolocalization service to use",
+            "required": false
           }
         ],
         "responses": {
@@ -67,6 +85,16 @@
       "get": {
         "operationId": "getWeather",
         "description": "Get wather at location of client IP",
+        "parameters": [
+          {
+            "name": "service",
+            "in": "query",
+            "type": "string",
+            "enum": [ "ip-api", "freegeoip"],
+            "description": "Geolocalization service to use",
+            "required": false
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful response",
@@ -94,6 +122,14 @@
             "type": "string",
             "description": "The IP address",
             "required": true
+          },
+          {
+            "name": "service",
+            "in": "query",
+            "type": "string",
+            "enum": [ "ip-api", "freegeoip"],
+            "description": "Geolocalization service to use",
+            "required": false
           }
         ],
         "responses": {
