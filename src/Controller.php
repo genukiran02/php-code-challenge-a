@@ -42,6 +42,10 @@ class Controller
         try {
             $result = $this->locationRequester->getLocation($ip, $service);
 
+            if($result->count() == 0) {
+                throw new RestException(500, 'No address found, is you IP address valid?');
+            }
+
             return $result->first();
 
         } catch (UnsupportedOperation $e) {
