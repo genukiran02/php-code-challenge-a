@@ -8,6 +8,9 @@ if (isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] == '/') {
     exit;
 }
 
+//Quick hasck so that the REST library doesn't remove the last part of the API
+$_SERVER['REQUEST_URI'] .= '.json';
+
 
 //init controller
 $adapter = new \Ivory\HttpAdapter\Guzzle6HttpAdapter();
