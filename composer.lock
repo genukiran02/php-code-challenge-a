@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "eaa038b359c88f10c52712ef8526d475",
-    "content-hash": "313f506015581b283d6302dca0548f29",
+    "hash": "f4460d41d5ad869697b56ce83da4268a",
+    "content-hash": "8b63a7446821cecd1c644176eeb5befa",
     "packages": [
         {
             "name": "egeloen/http-adapter",
@@ -303,6 +303,54 @@
             "time": "2014-12-15 23:03:51"
         },
         {
+            "name": "jacwright/restserver",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jacwright/RestServer.git",
+                "reference": "584aa063caeb88f2bbbdcd145786ae0df1df029c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jacwright/RestServer/zipball/584aa063caeb88f2bbbdcd145786ae0df1df029c",
+                "reference": "584aa063caeb88f2bbbdcd145786ae0df1df029c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Jacwright\\RestServer": "source/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Wright",
+                    "email": "jacwright@gmail.com",
+                    "homepage": "http://jacwright.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php rest server for very light-weight REST APIs",
+            "homepage": "https://github.com/jacwright/RestServer",
+            "keywords": [
+                "http",
+                "json",
+                "light-weight",
+                "mit",
+                "php",
+                "rest",
+                "rest-server"
+            ],
+            "time": "2016-12-20 19:04:05"
+        },
+        {
             "name": "marcj/php-rest-service",
             "version": "0.1.7",
             "source": {
@@ -509,7 +557,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "jacwright/restserver": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
