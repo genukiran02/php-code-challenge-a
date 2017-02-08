@@ -43,7 +43,7 @@ class Controller
                 'geo' => [
                     'service' => $service,
                     'city' => $address->getLocality(),
-                    'region' => $adminLevels->count() > 0 ? $adminLevels->first->getName() : '',
+                    'region' => $adminLevels->count() > 0 ? $adminLevels->first()->getName() : '',
                     'country' => $address->getCountry()->getName()
                 ]
             ];
