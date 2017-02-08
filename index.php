@@ -15,9 +15,9 @@ $_SERVER['REQUEST_URI'] .= '.json';
 //init controller
 $adapter = new \Ivory\HttpAdapter\Guzzle6HttpAdapter();
 $geolocation = new \Korri\Requester\Geolocation($adapter);
+$weather = new \Korri\Requester\Weather($adapter);
+$controller = new Korri\Controller($geolocation, $weather);
 
 $server = new Jacwright\RestServer\RestServer('debug');
-$server->refreshCache(); // uncomment momentarily to clear the cache if classes change in production mode
-
-$server->addClass(new Korri\Controller($geolocation));
+$server->addClass($controller);
 $server->handle();
