@@ -37,7 +37,7 @@
     "/geolocation/{ip}": {
       "get": {
         "operationId": "getGeolocationByIp",
-        "description": "Get geolocation for an IP",
+        "description": "Get geolocation for a specific IP",
         "parameters": [
           {
             "name": "ip",
@@ -52,6 +52,55 @@
             "description": "Successful response",
             "schema": {
               "$ref": "#/definitions/Geolocation"
+            }
+          },
+          "500": {
+            "description": "An error occured",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/weather": {
+      "get": {
+        "operationId": "getWeather",
+        "description": "Get wather at location of client IP",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/Weather"
+            }
+          },
+          "500": {
+            "description": "An error occured",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/weather/{ip}": {
+      "get": {
+        "operationId": "getWeatherByIp",
+        "description": "Get wather at location of a specific IP",
+        "parameters": [
+          {
+            "name": "ip",
+            "in": "path",
+            "type": "string",
+            "description": "The IP address",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/Weather"
             }
           },
           "500": {
@@ -85,6 +134,42 @@
             },
             "country": {
               "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Weather": {
+      "type": "object",
+      "properties": {
+        "ip": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "temperature": {
+          "type": "object",
+          "properties": {
+            "current": {
+              "type": "integer"
+            },
+            "low": {
+              "type": "integer"
+            },
+            "high": {
+              "type": "integer"
+            }
+          }
+        },
+        "wind": {
+          "type": "object",
+          "properties": {
+            "speed": {
+              "type": "integer"
+            },
+            "direction": {
+              "type": "integer"
             }
           }
         }
